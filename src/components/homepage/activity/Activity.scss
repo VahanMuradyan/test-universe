@@ -1,0 +1,174 @@
+@import "../../../assets/scss/variables";
+@import "../../../assets/scss/mixins";
+
+.activity-wrapper {
+  background-image: url("../../../assets/images/minting_page_bg.6f03dd9f.jpg");
+  padding: 0px 40px;
+  .activity-container {
+    margin: 0 auto;
+    max-width: 1360px;
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      border-spacing: 0 15px;
+      font-family: $spaceGroteskFont;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 130%;
+      td {
+        padding: 17px;
+      }
+      tr {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      }
+      .thead {
+        font-family: $spaceGroteskFont;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 22px;
+        color: rgba(0, 0, 0, 0.4);
+      }
+      .time-td {
+        font-family: $spaceGroteskFont;
+        color: rgba(0, 0, 0, 0.4);
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 130%;
+        img {
+          margin-left: 9px;
+        }
+        svg {
+          margin-left: 5px;
+          path {
+            fill: rgba(0, 0, 0, 0.2);
+          }
+        }
+        &:hover {
+          svg {
+            path {
+              fill: black;
+            }
+          }
+        }
+      }
+      .icon-td {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-family: $spaceGroteskFont;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 160%;
+        img {
+          margin-right: 20px;
+        }
+      }
+      .price-td {
+        font-family: $spaceGroteskFont;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 160%;
+        img {
+          margin-right: 9px;
+        }
+      }
+      @include md {
+        display: none;
+      }
+    }
+    .activity-content {
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      padding: 17px 0;
+      .user {
+        display: flex;
+        .user-info {
+          margin-left: 14px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: space-between;
+          img {
+            margin-bottom: 5px;
+          }
+          div {
+            display: flex;
+            align-items: center;
+            h1 {
+              display: flex;
+              margin-right: 8px;
+              align-items: center;
+              font-family: $spaceGroteskFont;
+              font-weight: 600;
+              font-size: 14px;
+              line-height: 160%;
+            }
+            span {
+              display: flex;
+              margin-right: 8px;
+              align-items: center;
+              font-family: $spaceGroteskFont;
+              font-weight: 600;
+              font-size: 12px;
+              line-height: 130%;
+              p {
+                margin-right: 4px;
+                font-family: $spaceGroteskFont;
+                font-weight: 500;
+                font-size: 12px;
+                line-height: 130%;
+                color: rgba(0, 0, 0, 0.4);
+              }
+              svg {
+                margin-left: 5px;
+                path {
+                  fill: rgba(0, 0, 0, 0.2);
+                }
+              }
+              &:hover {
+                svg {
+                  path {
+                    fill: black;
+                  }
+                }
+              }
+            }
+          }
+          @include sm {
+            justify-content: flex-start;
+          }
+        }
+      }
+      .price {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-end;
+        @include sm {
+          flex-direction: row;
+          margin-left: 80px;
+          margin-top: -19px;
+        }
+      }
+      .icon {
+        width: 50px;
+        height: 50px;
+        @include sm {
+          width: 66px;
+          height: 66px;
+        }
+      }
+
+      @include md {
+        display: flex;
+      }
+      @include sm {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+    }
+  }
+}

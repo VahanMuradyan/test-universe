@@ -1,0 +1,52 @@
+@import "../../assets/scss/variables";
+
+.rarity-chart-header-wrapper {
+  .rarity-chart-header-container {
+    background-color: black;
+    padding: 0px 40px;
+    .rarity-chart-header {
+      max-width: 1360px;
+      margin: 0 auto;
+      h1 {
+        font-family: $sharpGroteskBoldFont;
+        font-weight: 600;
+        font-size: 48px;
+        line-height: 120%;
+        color: #ffffff;
+        text-align: center;
+        padding-top: 128px;
+        padding-bottom: 16px;
+      }
+      p {
+        font-family: $spaceGroteskFont;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 28px;
+        text-align: center;
+        font-feature-settings: "ss03" on, "ss05" on;
+        color: rgba(255, 255, 255, 0.6);
+        padding-bottom: 120px;
+      }
+      .btn-polymorphs {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .btn-polymorphs-v1,
+        .btn-polymorphs-v2 {
+          cursor: pointer;
+          padding: 16px 29.5px;
+          border-radius: 12px 12px 0px 0px;
+          font-family: $sharpGroteskMediumFont;
+          font-weight: 600;
+          font-size: 12px;
+          line-height: 130%;
+          border: none;
+        }
+        .btn-polymorphs-v2 {
+          background: rgba(255, 255, 255, 0.2);
+          color: rgba(255, 255, 255, 0.6);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,264 @@
+@import "../../assets/scss/mixins";
+@import "../../assets/scss/variables";
+
+.header-wrapper {
+  .header-bg {
+    position: relative;
+    width: 100%;
+    min-height: 320px;
+    background-image: url("../../assets/images/Cover\ image.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    .upload-logo {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 12px;
+      padding: 13px;
+    }
+  }
+  .header-parent {
+    background-image: url("../../assets/images/minting_page_bg.6f03dd9f.jpg");
+    padding: 0px 40px;
+    .header-container {
+      position: relative;
+      max-width: 1360px;
+      margin: -180px auto 0px;
+    }
+    @include sm {
+      padding: 0px 16px;
+    }
+  }
+  .header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    .logo {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .adress-info {
+        margin-left: 20px;
+        h1 {
+          font-family: $sharpGroteskSemiBoldFont;
+          font-weight: 700;
+          font-size: 32px;
+          line-height: 40px;
+          color: $white;
+          @include md {
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+    .findUs {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .social-icon {
+        margin-right: 17px;
+        position: relative;
+        cursor: pointer;
+        .tooltip {
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          top: -60px;
+          background: #ffffff;
+          border: 1px solid #ececec;
+          box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+          border-radius: 8px;
+          padding: 12px 16px;
+          font-family: $spaceGroteskFont;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          color: $black;
+          visibility: hidden;
+          text-align: center;
+          &:after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 30px;
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-top: 20px solid #fff;
+            clear: both;
+          }
+        }
+        &:hover {
+          svg {
+            path {
+              fill-opacity: 1;
+            }
+          }
+          .tooltip {
+            visibility: visible;
+          }
+        }
+      }
+      @include md {
+        .social-icon {
+          display: none;
+        }
+      }
+      .menu-icon {
+        width: 0;
+        visibility: hidden;
+        position: relative;
+        margin-top: 2px;
+        margin-right: 17px;
+        .tooltip-list {
+          z-index: 1;
+          background: #ffffff;
+          border: 0.5px solid rgba(0, 0, 0, 0.05);
+          box-shadow: 0px 10px 36px rgba(136, 120, 172, 0.14);
+          border-radius: 12px;
+          list-style: none;
+          font-family: $spaceGroteskFont;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 140%;
+          visibility: hidden;
+          position: absolute;
+          top: 45px;
+          right: 0;
+          ul {
+            li {
+              padding: 10px;
+              display: flex;
+              padding: 15px 20px;
+              svg {
+                path {
+                  fill: black;
+                  fill-opacity: 1;
+                }
+                margin-right: 14px;
+              }
+              &:hover {
+                background-color: rgba(136, 120, 172, 0.2);
+              }
+            }
+          }
+        }
+        &:hover {
+          .tooltip-list {
+            visibility: visible;
+          }
+        }
+        @include sm {
+          position: absolute;
+          left: 180px;
+        }
+      }
+      @include md {
+        .menu-icon {
+          width: 42px;
+          visibility: visible;
+        }
+      }
+      .btn-vote {
+        margin-right: 17px;
+        padding: 11px 16px;
+        background: linear-gradient(135deg, #bceb00 15.57%, #00eaea 84.88%);
+        box-shadow: 0px 10px 20px rgba(136, 120, 172, 0.2);
+        border-radius: 12px;
+        border: none;
+        font-family: $spaceGroteskFont;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        cursor: pointer;
+        @include sm {
+          position: absolute;
+        }
+      }
+      .btn-edit {
+        background: url("../../assets/images/Cover\ image.png") padding-box
+            fixed,
+          linear-gradient(-45deg, #bceb00 0%, #00eaea 100%) border-box;
+        background-origin: border-box;
+        border: 1px solid transparent;
+        position: relative;
+        font-family: $spaceGroteskFont;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        display: flex;
+        align-items: center;
+        padding: 11px 16px;
+        background-color: transparent;
+        border-radius: 12px;
+        color: $white;
+        cursor: pointer;
+        svg {
+          margin-top: -6px;
+          margin-left: 10px;
+        }
+        &:hover {
+          color: #bceb00;
+          svg {
+            path {
+              fill:#00eaea;
+            }
+          }
+        }
+
+        @include sm {
+          position: absolute;
+          left: 80px;
+        }
+      }
+
+      @include sm {
+        margin-top: 32px;
+        margin-bottom: 16px;
+      }
+    }
+    @include sm {
+      flex-direction: column;
+      align-items: flex-start;
+      position: relative;
+    }
+  }
+  .info-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $white;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 24px 180px;
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      h1 {
+        font-family: $spaceGroteskFont;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 140%;
+      }
+    }
+    @include md {
+      padding: 24px 69px;
+    }
+    @include sm {
+      grid-gap: 20px;
+      padding: 24px 10px 24px 10px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      left: 24px;
+      right: 24px;
+    }
+  }
+}

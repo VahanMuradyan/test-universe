@@ -1,0 +1,109 @@
+@import "../../../assets/scss/variables";
+
+.search-wrapper {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 120px;
+  .search-bar {
+    padding-top: 64px;
+    display: grid;
+    grid-template-columns: 1fr 222px 54px;
+    grid-gap: 12px;
+    align-items: center;
+    .search {
+      background: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      padding: 17px 44px;
+      position: relative;
+      img {
+        position: absolute;
+        top: 15px;
+        left: 18px;
+      }
+      input {
+        border: none;
+        &:focus {
+          outline: none;
+        }
+        &::placeholder {
+          font-family: $spaceGroteskFont;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 24px;
+          color: rgba(0, 0, 0, 0.4);
+        }
+      }
+    }
+    .sort-cards {
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      position: relative;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #ffffff;
+      border-radius: 12px;
+      &:hover {
+        box-shadow: 0px 0px 0px 5px rgba(102, 234, 90, 0.15);
+        border: 1px solid transparent;
+        background-image: linear-gradient(175deg, #bceb00, #00eaea);
+        background-origin: border-box;
+        box-shadow: inset 2px 1000px 1px #fff;
+        svg {
+          transform: rotate(180deg);
+          path {
+            fill-opacity: 1;
+          }
+        }
+      }
+      p {
+        font-family: $spaceGroteskFont;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        margin-right: 13px;
+      }
+      .dropDown {
+        visibility: hidden;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 222px;
+        z-index: 1;
+        ul {
+          padding: 8px;
+          list-style: none;
+          background: #ffffff;
+          border-radius: 6px;
+          li {
+            padding: 15px;
+            &:hover {
+              background-color: rgba(0, 0, 0, 0.05);
+              border-radius: 6px;
+            }
+          }
+        }
+      }
+      &:hover {
+        .dropDown {
+          visibility: visible;
+        }
+      }
+    }
+    .sortBy {
+      background: #ffffff;
+      padding: 14px;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      &:hover {
+        svg {
+          path {
+            fill: rgba(0, 0, 0, 0.4);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,229 @@
+@import "../../../assets/scss/variables";
+
+.rarity-chart-container {
+  background-image: url("../../../assets/images/minting_page_bg.6f03dd9f.jpg");
+}
+.rarity-chart-homepage {
+  padding: 0 120px;
+  display: grid;
+  grid-template-columns: 255px 1fr;
+  grid-gap: 30px;
+  max-width: 1360px;
+  margin: 0 auto;
+  .rarity-chart-filters {
+    margin-top: 40px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    .filters-section {
+      width: 100%;
+      .filters {
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 11px 16px;
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+        p {
+          font-family: $spaceGroteskFont;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 140%;
+        }
+        &:hover {
+          box-shadow: 0px 0px 0px 5px rgba(102, 234, 90, 0.15);
+          svg {
+            transform: rotate(180deg);
+            path {
+              fill-opacity: 1;
+            }
+          }
+        }
+      }
+      .filters-list {
+        display: none;
+        align-items: center;
+        justify-content: flex-start;
+        ul {
+          list-style: none;
+          li {
+            display: flex;
+            align-items: center;
+            position: relative;
+            font-family: $spaceGroteskFont;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 140%;
+            margin-bottom: 16px;
+            img {
+              position: absolute;
+              z-index: 1;
+              top: 6px;
+              left: 6px;
+            }
+            input {
+              box-sizing: border-box;
+              cursor: pointer;
+              -webkit-appearance: none;
+              position: relative;
+              background: #fff;
+              border: 1px solid rgba(0, 0, 0, 0.1);
+              border-radius: 6px;
+              width: 24px;
+              height: 24px;
+              margin-right: 12px;
+              padding: 6px 4px;
+              &:checked {
+                content: url("../../../assets/images/checked.png");
+                background: linear-gradient(
+                  135deg,
+                  #bceb00 15.57%,
+                  #00eaea 84.88%
+                );
+                border-color: transparent;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .filter {
+      margin-bottom: 24px;
+      p {
+        font-family: $sharpGroteskBoldFont;
+        font-weight: 1000;
+        font-size: 16px;
+        line-height: 32px;
+      }
+    }
+  }
+  .main {
+    margin-top: 40px;
+    .filters-selected {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      .results {
+        font-family: $spaceGroteskFont;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 160%;
+        margin-right: 12px;
+      }
+      .selected {
+        padding: 6px 14px;
+        border: 1px solid transparent;
+        border-radius: 12px;
+        background-image: linear-gradient(175deg, #bceb00, #00eaea);
+        background-origin: border-box;
+        box-shadow: inset 2px 1000px 1px #fff;
+        margin-right: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        h2 {
+          margin-right: 12px;
+          font-family: $spaceGroteskFont;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 140%;
+        }
+        &:hover {
+          svg {
+            g {
+              opacity: 1;
+            }
+          }
+        }
+      }
+      .clear {
+        font-family: $spaceGroteskFont;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 150%;
+        text-decoration-line: underline;
+      }
+    }
+    .rarity-chart-cards {
+      margin-bottom: 70px;
+      margin-top: 24px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 30px;
+      img {
+        width: 100%;
+      }
+
+      .singleTrollCard {
+        background: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+        .troll-image {
+          position: relative;
+          .troll-icon {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 24px;
+            height: 24px;
+          }
+        }
+        .troll-info {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 14px;
+          h1 {
+            font-family: $spaceGroteskFont;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 120%;
+          }
+          p {
+            font-family: $spaceGroteskFont;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 160%;
+            color: rgba(0, 0, 0, 0.4);
+          }
+        }
+        .name {
+          margin: 14px;
+          border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+          padding-bottom: 14px;
+          h2 {
+            font-family: $spaceGroteskFont;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 20px;
+          }
+        }
+        .v-number {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          padding: 0 14px 14px 14px;
+          p {
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            padding: 10px;
+            margin-right: 6px;
+            color: rgba(0, 0, 0, 0.4);
+            font-family: $spaceGroteskFont;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 100%;
+          }
+        }
+      }
+    }
+  }
+}
