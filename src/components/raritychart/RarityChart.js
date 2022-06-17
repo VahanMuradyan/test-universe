@@ -5,7 +5,9 @@ import "./RarityChart.scss";
 import bg from "../../assets/images/minting_page_bg.6f03dd9f.jpg";
 export default function RarityChart() {
   const { rarityChartData } = useSelector((state) => state.flufWorldData);
-  const [data, setData] = useState(rarityChartData);
+  const [data, setData] = useState(
+    rarityChartData.filter((el) => el.v === "v1")
+  );
 
   const [buttons, setButtons] = useState([
     {
@@ -13,7 +15,7 @@ export default function RarityChart() {
       name: "Polymorphs V1",
       shortName: "V1",
       key: "v1",
-      isActive: false,
+      isActive: true,
     },
     {
       id: 2,

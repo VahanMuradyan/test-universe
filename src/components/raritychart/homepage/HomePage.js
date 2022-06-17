@@ -94,7 +94,7 @@ export default function HomePage({ polymorphs }) {
     const slice = polymorphs.slice(offset, offset + perPage);
     setData(slice);
     setPageCount(Math.ceil(polymorphs.length / perPage));
-  }, [offset, perPage]);
+  }, [offset, perPage, polymorphs]);
 
   return (
     <div className="rarity-chart-container">

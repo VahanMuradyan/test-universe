@@ -2,11 +2,9 @@
 @import "../../../assets/scss/mixins";
 
 .search-wrapper {
-  max-width: 1360px;
+  max-width: 1110px;
   margin: 0 auto;
-  padding: 0 120px;
   .search-bar {
-    padding-top: 64px;
     display: grid;
     grid-template-columns: 1fr 222px 54px;
     grid-gap: 12px;
@@ -113,11 +111,5 @@
         grid-column: 3/4;
       }
     }
-  }
-  @include lg {
-    padding: 0 60px;
-  }
-  @include sm {
-    padding: 0 20px;
   }
 }
