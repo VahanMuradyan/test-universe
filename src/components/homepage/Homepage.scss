@@ -114,6 +114,7 @@
           }
           &:hover {
             svg {
+              transition: .5s ease-in-out;
               transform: rotate(180deg);
               path {
                 fill-opacity: 1;

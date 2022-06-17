@@ -10,7 +10,6 @@ import troll5 from "../../assets/images/Image (8).png";
 import sIcon from "../../assets/images/s.png";
 import vIcon from "../../assets/images/v.png";
 
-
 export const flufWorldState = {
   flufData: [
     {
@@ -235,6 +234,87 @@ export const flufWorldState = {
     {
       id: 9,
       number: "#9",
+      score: "Rarity score: 3120",
+      image: troll3,
+      icon: vIcon,
+      name: "Troll God #23",
+      v: "v2",
+    },
+    {
+      id: 10,
+      number: "#10",
+      score: "Rarity score: 3120",
+      image: troll1,
+      icon: sIcon,
+      name: "Troll God #23",
+      v: "v1",
+    },
+    {
+      id: 11,
+      number: "#11",
+      score: "Rarity score: 3120",
+      image: troll2,
+      icon: sIcon,
+      name: "Troll God #23",
+      v: "v1",
+    },
+    {
+      id: 12,
+      number: "#12",
+      score: "Rarity score: 3120",
+      image: troll3,
+      icon: vIcon,
+      name: "Troll God #23",
+      v: "v1",
+    },
+    {
+      id: 13,
+      number: "#13",
+      score: "Rarity score: 3120",
+      image: troll3,
+      icon: vIcon,
+      name: "Troll God #23",
+      v: "v1",
+    },
+    {
+      id: 14,
+      number: "#14",
+      score: "Rarity score: 3120",
+      image: troll4,
+      icon: sIcon,
+      name: "Troll God #23",
+      v: "v2",
+    },
+    {
+      id: 15,
+      number: "#15",
+      score: "Rarity score: 3120",
+      image: troll1,
+      icon: vIcon,
+      name: "Troll God #23",
+      v: "v1",
+    },
+    {
+      id: 16,
+      number: "#16",
+      score: "Rarity score: 3120",
+      image: troll5,
+      icon: sIcon,
+      name: "Troll God #23",
+      v: "v1",
+    },
+    {
+      id: 17,
+      number: "#17",
+      score: "Rarity score: 3120",
+      image: troll2,
+      icon: sIcon,
+      name: "Troll God #23",
+      v: "v2",
+    },
+    {
+      id: 18,
+      number: "#18",
       score: "Rarity score: 3120",
       image: troll3,
       icon: vIcon,

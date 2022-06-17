@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Search.scss";
 import { ReactComponent as SortIcon } from "../../../assets/images/sort.svg";
 import { ReactComponent as SortByIcon } from "../../../assets/images/SortByIcon.svg";
 import search from "../../../assets/images/search.png";
 
 export default function Search() {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="search-wrapper">
       <div className="search-bar">
@@ -23,8 +24,14 @@ export default function Search() {
             </ul>
           </div>
         </div>
-        <div className="sortBy">
-          <SortByIcon />
+        <div onClick={() => setIsOpen(!isOpen)} className="sortBy">
+          <SortByIcon
+            style={
+              isOpen
+                ? { transform: "rotate(180deg)", transition: ".5s ease-in-out" }
+                : null
+            }
+          />
         </div>
       </div>
     </div>
