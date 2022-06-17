@@ -167,6 +167,7 @@ export const flufWorldState = {
       icon: sIcon,
       name: "Troll God #23",
       v: "v1",
+      
     },
     {
       id: 2,
