@@ -9,6 +9,7 @@ import { useSelector } from "react-redux";
 import FlufCard from "../flufcard/FlufCard";
 import NavBar from "../../components/navBar/NavBar";
 import Header from "../header/Header";
+
 export default function Homepage() {
   const { flufData } = useSelector((state) => state.flufWorldData);
 
@@ -63,7 +64,14 @@ export default function Homepage() {
                 <p>Sort By</p>
                 <div
                   className="sortIcon"
-                  style={isOpen ? { transform: "rotate(180deg)" } : null}
+                  style={
+                    isOpen
+                      ? {
+                          transform: "rotate(180deg)",
+                          transition: ".5s ease-in-out",
+                        }
+                      : null
+                  }
                 >
                   <SortIcon />
                 </div>
