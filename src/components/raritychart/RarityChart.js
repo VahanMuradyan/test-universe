@@ -3,6 +3,9 @@ import { useSelector } from "react-redux";
 import HomePage from "./homepage/HomePage";
 import "./RarityChart.scss";
 import bg from "../../assets/images/minting_page_bg.6f03dd9f.jpg";
+import Lottie from "react-lottie";
+import * as animationData from "../../animation/rarity_header_animation_desktop.json";
+
 export default function RarityChart() {
   const { rarityChartData } = useSelector((state) => state.flufWorldData);
   const [data, setData] = useState(
@@ -26,6 +29,15 @@ export default function RarityChart() {
     },
   ]);
 
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
   const handlePolymorphs = (button, index) => {
     const Data = rarityChartData.filter((el) => el.v === button.key);
     setData(Data);
@@ -38,6 +50,10 @@ export default function RarityChart() {
   return (
     <div className="rarity-chart-header-wrapper">
       <div className="rarity-chart-header-container">
+        <Lottie
+          style={{ position: "absolute", left: 0 }}
+          options={defaultOptions}
+        />
         <div className="rarity-chart-header">
           <h1>Polymorph Rarity Chart</h1>
           <p>10,000 Total Polymorphs</p>

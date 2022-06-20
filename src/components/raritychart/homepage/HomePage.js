@@ -3,7 +3,8 @@ import "./Homepage.scss";
 import TrollCard from "../trollcard/TrollCard";
 import { ReactComponent as SortIcon } from "../../../assets/images/sort.svg";
 import { ReactComponent as ClearIcon } from "../../../assets/images/ClearIcon.svg";
-
+import { ReactComponent as NextLabel } from "../../../assets/images/nextLabel.svg";
+import { ReactComponent as PreviousLabel } from "../../../assets/images/lastLabel.svg";
 import Search from "../search/Search";
 import useOutsideClick from "./useOutsideClick ";
 import filter from "../../../assets/images/filter.png";
@@ -53,21 +54,74 @@ export default function HomePage({ polymorphs }) {
     },
   ]);
 
-  const filterCategory = [
-    "No Eyewear",
-    "3D Glasses",
-    "Bar Shades",
-    "Eye Paint",
-    "Golden Sunglasses",
-    "Monocle",
-    "Orange Sunglesses",
-  ];
+  const [filterCategory, setFilterCategory] = useState([
+    {
+      id: 1,
+      name: "No Eyewear",
+      checked: false,
+    },
+    {
+      id: 2,
+      name: "3D Glasses",
+      checked: false,
+    },
+    {
+      id: 3,
+      name: "Bar Shades",
+      checked: false,
+    },
+    {
+      id: 4,
+      name: "Eye Paint",
+      checked: false,
+    },
+    {
+      id: 5,
+      name: "Golden Sunglasses",
+      checked: false,
+    },
+    {
+      id: 6,
+      name: "Monocle",
+      checked: false,
+    },
+    {
+      id: 7,
+      name: "Orange Sunglesses",
+      checked: false,
+    },
+  ]);
   const [offset, setOffset] = useState(0);
   const [data, setData] = useState(null);
   const [perPage, setPerPage] = useState(3);
   const [pageCount, setPageCount] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
+  const [pagesDisplayed, setPagesDisplayed] = useState(false);
   const ref = useRef();
+
+  const [selectedFilters, setSelectedFilters] = useState([]);
+  const showSelectedFilters = (filter, index) => {
+    filterCategory[index].checked = true;
+    setFilterCategory(filterCategory);
+    selectedFilters.push(filter.name);
+    setSelectedFilters(selectedFilters);
+  };
+
+  const clearFilters = () => {
+    filterCategory.map((el) => (el.checked = false));
+    setFilterCategory(filterCategory);
+    setSelectedFilters([]);
+  };
+
+  const clearFilter = (element) => {
+    console.log(element);
+    filterCategory.map((el) =>
+      el.name === element ? (el.checked = false) : null
+    );
+    setFilterCategory(filterCategory);
+    const newData = selectedFilters.filter((el) => el !== element);
+    setSelectedFilters(newData);
+  };
 
   const handleFilters = (index) => {
     setFilterSection(filterSection.map((filter) => (filter.clicked = false)));
@@ -90,6 +144,7 @@ export default function HomePage({ polymorphs }) {
     const value = e.target.innerText;
     setPerPage(value);
   };
+
   useEffect(() => {
     const slice = polymorphs.slice(offset, offset + perPage);
     setData(slice);
@@ -128,9 +183,7 @@ export default function HomePage({ polymorphs }) {
                   <SortIcon
                     style={
                       el.clicked && isOpen
-                        ? {
-                            transform: "rotate(180deg)",
-                          }
+                        ? { transform: "rotate(180deg)" }
                         : null
                     }
                   />
@@ -143,8 +196,14 @@ export default function HomePage({ polymorphs }) {
                     {filterCategory.map((el, i) => {
                       return (
                         <li key={i}>
-                          <input type="checkbox" />
-                          {el}
+                          <input
+                            checked={el.checked}
+                            type="checkbox"
+                            onChange={() => {
+                              showSelectedFilters(el, i);
+                            }}
+                          />
+                          {el.name}
                         </li>
                       );
                     })}
@@ -155,17 +214,33 @@ export default function HomePage({ polymorphs }) {
           })}
         </div>
         <div className="main">
-          <div className="filters-selected">
+          <div
+            className="filters-selected"
+            style={
+              selectedFilters.length > 0 ? { visibility: "visible" } : null
+            }
+          >
             <p className="results">898 results</p>
-            <div className="selected">
-              <h2>3D Glasses</h2>
-              <ClearIcon />
-            </div>
-            <div className="selected">
-              <h2>Monocle</h2>
-              <ClearIcon />
-            </div>
-            <p className="clear">Clear all</p>
+            {selectedFilters?.map((el, i) => {
+              return (
+                <div key={i} className="selected">
+                  <h2>{el}</h2>
+                  <ClearIcon
+                    onClick={() => {
+                      clearFilter(el);
+                    }}
+                  />
+                </div>
+              );
+            })}
+            <p
+              className="clear"
+              onClick={() => {
+                clearFilters();
+              }}
+            >
+              Clear all
+            </p>
           </div>
           <div className="rarity-chart-cards">
             <button className="filter-btn">
@@ -177,8 +252,8 @@ export default function HomePage({ polymorphs }) {
           </div>
           <div className="pagination-container">
             <ReactPaginate
-              previousLabel={"<"}
-              nextLabel={">"}
+              previousLabel={<PreviousLabel />}
+              nextLabel={<NextLabel />}
               breakLabel={"..."}
               pageCount={pageCount}
               marginPagesDisplayed={2}
@@ -189,9 +264,27 @@ export default function HomePage({ polymorphs }) {
             />
             <div className="displayed-card">
               <p>Items per page</p>
-              <div className="card-count">
-                {perPage} <SortIcon />
-                <div className="per-page-dropdown">
+              <div
+                tabIndex="0"
+                onBlur={() => setPagesDisplayed(false)}
+                onClick={() => setPagesDisplayed(true)}
+                className="card-count"
+              >
+                {perPage}{" "}
+                <SortIcon
+                  style={
+                    pagesDisplayed
+                      ? {
+                          transform: "rotate(180deg)",
+                          transition: ".5s ease-in-out",
+                        }
+                      : null
+                  }
+                />
+                <div
+                  className="per-page-dropdown"
+                  style={pagesDisplayed ? { display: "flex" } : null}
+                >
                   <span onClick={ItemsDisplayed}>9</span>
                   <span onClick={ItemsDisplayed}>6</span>
                   <span onClick={ItemsDisplayed}>3</span>

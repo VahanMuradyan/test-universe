@@ -6,6 +6,7 @@ import search from "../../../assets/images/search.png";
 
 export default function Search() {
   const [isOpen, setIsOpen] = useState(false);
+  const [open, setOpen] = useState(false);
   return (
     <div className="search-wrapper">
       <div className="search-bar">
@@ -13,10 +14,24 @@ export default function Search() {
           <img src={search} alt="search" />
           <input placeholder="Search items" />
         </div>
-        <div className="sort-cards">
+        <div
+          tabIndex="0"
+          onBlur={() => setOpen(false)}
+          onClick={() => setOpen(true)}
+          className="sort-cards"
+        >
           <p>Rarity Score</p>
-          <SortIcon />
-          <div className="dropDown">
+          <SortIcon
+            style={
+              open
+                ? { transform: "rotate(180deg)", transition: ".5s ease-in-out" }
+                : null
+            }
+          />
+          <div
+            style={open ? { visibility: "visible" } : null}
+            className="dropDown"
+          >
             <ul>
               <li>Rarity Score</li>
               <li>Rank</li>
