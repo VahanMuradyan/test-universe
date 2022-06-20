@@ -112,6 +112,7 @@
       margin-top: 40px;
       margin-bottom: 40px;
       .filters-selected {
+        visibility: hidden;
         display: flex;
         justify-content: flex-start;
         align-items: center;
@@ -142,6 +143,7 @@
           }
           &:hover {
             svg {
+              cursor: pointer;
               g {
                 opacity: 1;
               }
@@ -149,6 +151,7 @@
           }
         }
         .clear {
+          cursor: pointer;
           font-family: $spaceGroteskFont;
           font-weight: 400;
           font-size: 14px;
@@ -349,11 +352,6 @@
                   background-color: rgb(136 120 172 / 20%);
                   border-radius: 12px;
                 }
-              }
-            }
-            &:hover {
-              .per-page-dropdown {
-                display: flex;
               }
             }
           }

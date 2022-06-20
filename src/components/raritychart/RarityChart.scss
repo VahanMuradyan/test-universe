@@ -4,6 +4,7 @@
 .rarity-chart-header-wrapper {
   .rarity-chart-header-container {
     background-color: black;
+    position: relative;
     padding: 0px 40px;
     .rarity-chart-header {
       max-width: 1360px;
@@ -33,10 +34,11 @@
         padding-bottom: 120px;
       }
       .btn-polymorphs {
+        z-index: 1;
         display: flex;
         align-items: center;
         justify-content: center;
-        .btn-polymorphs{
+        .btn-polymorphs {
           background: rgba(255, 255, 255, 0.2);
           border: none;
           border-radius: 12px 12px 0px 0px;
