@@ -1,0 +1,391 @@
+@import "../../../assets/scss/variables";
+@import "../../../assets/scss/mixins";
+
+.match-content {
+
+    background: #000000;
+    border: none;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    color: $white;
+    width: 129px;
+    text-align: center;
+    padding: 12px 0;
+
+
+    svg {
+        path {
+            fill: $black;
+        }
+    }
+}
+
+.trollGodSection {
+    
+    .trollGodContainer {
+        display: grid;
+        grid-template-columns: 880px 550px;
+        max-width: 1430px;
+        margin: 0 auto;
+        position: relative;
+
+        .left {
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            padding: 11px;
+            position: absolute;
+            top: 75px;
+            left: 45px;
+            z-index: 6;
+
+            img {
+                width: 20px;
+                height: 20px;
+            }
+
+            span {
+                display: none;
+
+                @include lg {
+                    display: block;
+                }
+            }
+
+            @include lg {
+                top: 45px;
+                display: flex;
+                align-items: center;
+                border: none;
+            }
+
+            @include sm {
+                left: 16px;
+            }
+
+        }
+
+        .trollImage {
+            background-image: url("../../../assets/images/minting_page_bg.6f03dd9f.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding: 60px 140px;
+            height: 720px;
+
+            .image {
+                position: relative;
+
+                img {
+                    width: 100%;
+                    border-radius: 12px;
+
+
+                    @include lg {
+                        width: 100%;
+                    }
+
+
+                }
+            }
+
+
+
+            .switch {
+                position: absolute;
+                top: 48px;
+                left: 8px;
+                z-index: 7;
+
+                @include lg {
+                    right: 0;
+                }
+            }
+
+            .badges {
+
+                position: absolute;
+                top: 8px;
+                right: 8px;
+
+                img {
+                    position: absolute;
+                    width: 40px;
+                    height: 40px;
+                }
+
+                .badge1 {
+                    top: 0;
+                    right: 0;
+                    z-index: 4;
+                }
+
+                .badge2 {
+                    top: 0;
+                    right: 25px;
+                    z-index: 3;
+
+                }
+
+                .badge3 {
+                    top: 0;
+                    right: 50px;
+                    z-index: 2;
+                }
+
+                .badge4 {
+                    top: 0;
+                    right: 75px;
+                    z-index: 1;
+                }
+
+                img:hover {
+                    cursor: pointer;
+                    z-index: 5;
+                }
+
+            }
+
+            @include lg {
+                padding: 60px 43px 43px;
+                height: 100%;
+                // text-align: center;
+            }
+
+            @include sm {
+                padding: 60px 20px;
+            }
+
+
+        }
+
+        .description {
+            background: #FFFFFF;
+            box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
+            height: 720px;
+
+            .textField {
+                padding: 43px 40px 0px;
+
+                .title {
+
+                    display: flex;
+                    justify-content: space-between;
+                    padding-bottom: 40px;
+
+                    h1 {
+                        font-family: $sharpGroteskSemiBoldFont;
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 26px;
+                        color: #000000;
+                    }
+
+                    button {
+                        border: 1px solid rgba(0, 0, 0, 0.1);
+                        border-radius: 12px;
+                        background-color: $white;
+                        padding: 11px;
+                    }
+                }
+
+                .p {
+                    font-family: $spaceGroteskFont;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 14px;
+                    color: rgba(0, 0, 0, 0.6);
+                    padding-bottom: 40px;
+                }
+
+                .slideProperties {
+                    span {
+                        font-family: $spaceGroteskFont;
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 16px;
+                        color: #000000;
+                        margin-right: 40px;
+                    }
+                }
+
+                .buttons {
+
+                    padding-top: 30px;
+
+                    >button {
+                        font-family: $spaceGroteskFont;
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 14px;
+                        color: #000000;
+                        padding: 6px 12px;
+                        margin-right: 8px;
+                        background: rgba(0, 0, 0, 0.05);
+                        border-radius: 8px;
+                        border: none;
+
+                        &:nth-child(1) {
+                            background: linear-gradient(131.29deg, rgba(225, 246, 100, 0.2) 0%, rgba(254, 176, 254, 0.2) 34.66%, rgba(171, 179, 252, 0.2) 63.53%, rgba(93, 247, 164, 0.2) 100%);
+                            border-radius: 8px;
+                            cursor: pointer;
+                            border: 1px solid rgb(247, 201, 209);
+                        }
+
+                    }
+                }
+
+                .pictures {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 16px;
+                    padding: 32px 0 22px;
+
+                    .item {
+                        width: 146px;
+                        height: 84px;
+                        padding: 12px;
+                        text-align: center;
+                        position: relative;
+
+                        .itemDescription {
+                            >p {
+                                &:nth-child(1) {
+                                    font-family: $spaceGroteskFont;
+                                    font-style: normal;
+                                    font-weight: 500;
+                                    font-size: 10px;
+                                    color: #000000;
+                                }
+
+                                &:nth-child(2) {
+                                    font-family: $spaceGroteskFont;
+                                    font-style: normal;
+                                    font-weight: 700;
+                                    font-size: 12px;
+                                    padding: 6px 0;
+                                    color: #000000;
+                                }
+
+                                &:nth-child(3) {
+                                    font-family: $spaceGroteskFont;
+                                    font-style: normal;
+                                    font-weight: 400;
+                                    font-size: 12px;
+                                    color: rgba(0, 0, 0, 0.4);
+                                }
+                            }
+                        }
+
+                        img {
+                            border-radius: 100px;
+                            padding: 6px;
+                            position: absolute;
+                            top: -12px;
+                            right: -12px;
+                            background: $white;
+                        }
+
+                        @include lg {
+                            width: 175px;
+                        }
+
+                        @include sm {
+                            width: 160px;
+                        }
+
+                    }
+
+
+                    .item1,
+                    .item4,
+                    .item7 {
+
+                        background: linear-gradient(90deg, rgba(200, 87, 202, 0.1) 50%, rgba(251, 140, 0, 0.03) 50%);
+                        border-radius: 12px;
+                        border: 1px solid yellow;
+
+                        img {
+                            border: 1px solid yellow;
+                        }
+                    }
+
+                    .item2,
+                    .item5,
+                    .item8 {
+
+                        background: rgba(30, 136, 229, 0.05);
+                        border: 1px solid #1E88E5;
+                        border-radius: 12px;
+
+                        img {
+                            border: 1px solid #1E88E5;
+                        }
+
+
+                    }
+
+                    .item3,
+                    .item6 {
+
+                        background: rgba(200, 87, 202, 0.1);
+                        border: 1px solid #C857CA;
+                        border-radius: 12px;
+
+                        img {
+                            border: 1px solid #C857CA;
+                        }
+                    }
+
+                    @include lg {
+                        grid-template-columns: repeat(4, 1fr);
+                    }
+
+                    @include sm {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                }
+            }
+
+            .linear {
+                height: 3px;
+                background: linear-gradient(90deg, #2AD0CA 0%, #E1F664 22.92%, #FEB0FE 46.88%, #ABB3FC 68.23%, #5DF7A4 87.5%, #58C4F6 100%);
+            }
+
+            @include lg {
+                height: 632px;
+            }
+
+        }
+
+        .buttonField {
+
+            padding: 24px 0px;
+            text-align: center;
+
+            button {
+                font-family: $spaceGroteskFont;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 16px;
+                background: linear-gradient(135deg, #BCEB00 15.57%, #00EAEA 84.88%);
+                box-shadow: 0px 10px 20px rgba(136, 120, 172, 0.2);
+                border-radius: 12px;
+                border: none;
+                width: 470px;
+                height: 48px;
+
+                @include sm {
+                    width: 320px;
+                }
+            }
+
+            @include sm {
+                padding: 24px 0px;
+            }
+        }
+
+        @include lg {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 748px
+        }
+    }
+}
